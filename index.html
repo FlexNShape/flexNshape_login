@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        height: 100vh;
+        margin: 0;
+        background-color: #17181f;
+      }
+
+      .container {
+        width: 500px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .container h2 {
+        margin-top: 0;
+      }
+
+      .container input {
+        width: 95%;
+        padding: 10px;
+        margin: 5px 0 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .container button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        border: none;
+        color: white;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .container button:hover {
+        background-color: #0056b3;
+      }
+
+      .message {
+        color: red;
+        font-size: 14px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header id="header">
+        <div class="hdiv1">
+          <div class="hsubdiv1">
+            <a href="#"
+              ><img src="flexNshape-icon bg removed.png" alt="icon" />
+            </a>
+          </div>
+          <div class="hsubdiv2">
+            <ul class="list-items">
+              <li><a href="#header">Home</a></li>
+              <li><a href="#about-us">About us</a></li>
+              <li><a href="#">Sports</a></li>
+              <li><a href="#fitness-exercises">Fitness</a></li>
+              <div class="signup"><a href="#">Sign up</a></div>
+              <div class="login"><a href="#">Login</a></div>
+            </ul>
+          </div>
+          <div class="hsubdiv3">
+            <button class="contact-us">Contact us</button>
+          </div>
+        </div>
+      </header>
+      <div class="main-cont">
+        <div class="container">
+        <h2>Login</h2>
+        <div id="message" class="message"></div>
+        <input
+            type="text"
+            id="registerUsername"
+            placeholder="Username or email id"
+            required />
+        <input
+            type="password"
+            id="registerPassword"
+            placeholder="Password"
+            required />
+        <button onclick="registerUser()">Register</button>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="f-p-1">
+          <img src="flexNshape-icon bg removed.png" alt="image" />
+          <p>
+            At flexNshape, we make group workouts fun, daily food healthy & tasty,
+            mental fitness easy with yoga & meditation, Medical & lifestyle care
+            hassle-free.#BeBetterEveryDay
+          </p>
+        </div>
+        <div class="f-p-2">
+          <ul>
+            <li><a href="#">blogs</a></li>
+            <li><a href="#">security</a></li>
+            <li><a href="#">carrers</a></li>
+          </ul>
+        </div>
+        <div class="f-p-3">
+          <ul>
+            <li><a href="#">contact us</a></li>
+            <li><a href="#">privacy policy</a></li>
+            <li><a href="#">terms & condition</a></li>
+          </ul>
+        </div>
+        <div class="f-p-4">
+          <img src="teamimg.jpeg" alt="image" />
+          <ul>
+            <li>
+              <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </li>
+  
+            <li>
+              <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href=""><i class="fa-regular fa-envelope"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!--footer- sec -2-->
+      <div class="foot-sec2">
+        <div>
+          <p class="t-p">
+            © 2024 flexNshape. All Rights Reserved By team flexNshape.
+          </p>
+        </div>
+        <div class="up-arrow"><a href="#">↑</a></div>
+      </div>
+    </div>
+    <script src="login.js"></script>
+    <script>
+      function registerUser() {
+        const username = document.getElementById("registerUsername").value;
+        const password = document.getElementById("registerPassword").value;
+        const messageElement = document.getElementById("message");
+
+        const result = register(username, password);
+        messageElement.textContent = result;
+        messageElement.style.color =
+          result === "User registered successfully" ? "green" : "red";
+      }
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>
